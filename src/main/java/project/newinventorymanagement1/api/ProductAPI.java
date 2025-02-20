@@ -2,9 +2,9 @@ package project.newinventorymanagement1.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import project.inventorymanagementservice.entity.Product;
-import project.inventorymanagementservice.entity.ProductCategory;
-import project.inventorymanagementservice.service.ProductService;
+import project.newinventorymanagement1.entity.Product;
+import project.newinventorymanagement1.entity.ProductCategory;
+import project.newinventorymanagement1.service.ProductService;
 
 import java.util.List;
 import java.util.Optional;
