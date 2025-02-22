@@ -1,6 +1,9 @@
 package project.inventorymanagementservice.api;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.loader.ResourceEntry;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.inventorymanagementservice.entity.Product;
 import project.inventorymanagementservice.entity.ProductCategory;
@@ -49,4 +52,16 @@ public class ProductAPI {
             return "Product id " + id + " could not be deleted";
         }
     }
+    @GetMapping("/{id}/stock")
+    public ResponseEntity<Product> getProductStock(@PathVariable("id") Integer id) {
+        productService.getProductById(id);
+        return ResponseEntity.status(HttpStatus.FOUND).body(productService.getProductStock(id));
+
+    }
+
+    @PutMapping("/{id}/stock")
+    public Optional <Product> updatestock(@PathVariable Integer id, @RequestParam int quantity) {
+        return productService.updateProductStock(id,quantity);
+    }
+
 }

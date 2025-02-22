@@ -38,4 +38,16 @@ public class ProductService {
         productRepo.deleteById(id);
         return true;
     }
+    public Product getProductStock(Integer id) {
+//        return getProductById(id).map(Product::getQuantity).orElse(0);
+        return productRepo.findById(id).orElse(new Product());
+    }
+
+    public Optional<Product> updateProductStock(Integer id,int newStock) {
+        return getProductById(id).map(product -> {
+            product.setQuantity(newStock);
+            return productRepo.save(product);
+        });
+    }
+
 }
