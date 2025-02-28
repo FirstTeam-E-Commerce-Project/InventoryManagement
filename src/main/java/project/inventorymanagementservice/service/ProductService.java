@@ -27,7 +27,7 @@ public class ProductService {
     }
 
     public List<Product> getProductByCategory(ProductCategory productCategory) {
-        return productRepo.findAllByProductCategoryIgnoreCase(productCategory);
+        return productRepo.findAllByProductCategory(productCategory);
     }
 
     public Optional<Product> getProductById(Integer id) {
