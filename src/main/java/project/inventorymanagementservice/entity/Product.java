@@ -16,9 +16,7 @@ public class Product {
     private Integer productId;
     private String modelNumber;
     private String name;
-    private String description;
-    private String brand;
-    private Integer price;
+    private double price;
     private Integer quantity;
     @Enumerated(EnumType.STRING)
     private ProductCategory productCategory;
